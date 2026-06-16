@@ -1,0 +1,12 @@
+numpy
+pandas
+yfinance
+tensorflow
+streamlit
+matplotlib
+nltk
+scikit-learn
+yahoo_fin
+newsapi-python
+tf-keras
+

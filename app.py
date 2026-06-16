@@ -1,12 +1,12 @@
 import numpy as np 
 import pandas as pd
 import yfinance as yf
-from keras.models import load_model
+from tf_keras.models import load_model
 import streamlit as st
 import matplotlib.pyplot as plt
 import nltk
 
-model = load_model(r'C:\Users\Kelsey\OneDrive\Documents\stockk\Stock Predictions Model.keras')
+model = load_model('Stock Predictions Model.keras')
 
 st.header('Stock Price Predictor')
 
@@ -111,12 +111,11 @@ def get_latest_news(symbol):
 def main():
     st.header("Latest Stock News Headlines")
     
-    symbol = st.text_input('Enter Stock Symbol')
-    if symbol:
+    if stock:
         try:
-            news = get_latest_news(symbol)
+            news = get_latest_news(stock)
             if news:
-                st.write(f"### News Headlines for {symbol}")
+                st.write(f"### News Headlines for {stock}")
                 for article in news:
                     title = article['title']
                     url = article['url']
